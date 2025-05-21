@@ -1,0 +1,85 @@
+---
+import Badge from "./Badge.astro"
+import LinkedinIcon from "../components/icons/Linkedin.astro"
+import SocialPill from "../components/SocialPill.astro"
+import Github from "./icons/Github.astro"
+import Mail from "./icons/Mail.astro"
+---
+
+<main id="Resumen" class="flex justify-between">
+
+        <div class="w-full mx-auto lg:w-[740px] py-10">
+            <h1 class="text-5xl font-bold">Hey Coders, soy Ivan Plaza 
+                <div class="mb-5">
+                    <Badge>Disponible para trabajar</Badge>
+                </div> 
+            </h1>
+
+            <h2 class="text-2xl text-wrap">
+                <span class="text-yellow-500/90">
+                    Desarrollador Full Stack especializado en Front-end y Back-end,
+                </span>
+                <span>
+                    con habilidades creativas y trabajo en equipo destacados. Amplia experiencia en tecnologías y frameworks, dispuesto a aprender y enfrentar nuevos desafíos.
+                </span>
+
+                 
+            </h2>
+        </div>
+
+        
+    </main>
+
+    <nav class="mb-10 flex gap-5">
+        <SocialPill href="https://www.linkedin.com/in/ivan-andres-plaza/">  
+            <LinkedinIcon class="size-6"/>
+            Linkedin  
+        </SocialPill>
+        <SocialPill href="https://github.com/IvanPlaza44">  
+            <Github class="size-6"/>
+            GitHub  
+        </SocialPill>
+        <SocialPill href="mailto:plazaivanalt@gmail.com">  
+            <Mail class="size-6"/>
+            plazaivanalt@gmail.com 
+        </SocialPill>
+    </nav>
+
+
+
+
+
+
+    <div class="relative">
+        <img id="img1" src="/public/avatar.png" alt="avatar" class="w-[400px]">
+        <img id="img2" src="/public/avatar.png" alt="avatar" class="w-[400px]">
+    </div>
+
+    <style>
+        #img1 {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        #img2 {
+            animation: floating 3s ease-in-out infinite;
+            position: absolute;
+            inset: 0;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        @keyframes floating{
+            0% {
+                transform: translateY(-20px);
+            }
+            50% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        
+        
+    </style>

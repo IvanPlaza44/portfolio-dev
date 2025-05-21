@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+import '@fontsource-variable/onest';
+import Header from "../components/Header.astro";
+import Resumen from "../components/Resumen.astro";
+import Experience from "../components/Experience.astro";
+
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Full Stack Portfolio</title>
+	</head>
+	<body>
+		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<slot />
+		<Header/>
+		<Resumen/>
+		<Experience/>
+	</body>
+	
+</html>
+
+<style is:global>
+	:root{
+		color-scheme: ligth dark;
+	}
+	
+	html{
+		font-family: 'Onest Variable', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+	
+	body{
+		display: flex;
+		align-items: center;
+		flex-direction: column;		
+		background-color: #0e0e0e;	
+		}
+		@media (prefers-reduced-motion: reduce) {
+			html {
+				scroll-behavior: auto;
+			}
+		}
+</style>
