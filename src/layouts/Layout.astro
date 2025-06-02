@@ -4,6 +4,10 @@ import '@fontsource-variable/onest';
 import Header from "../components/Header.astro";
 import Resumen from "../components/Resumen.astro";
 import Experience from "../components/Experience.astro";
+import Proyects from "../components/Proyects.astro";
+import FormMail from "../components/FormMail.astro";
+import Technologies from "../components/Technologies.astro";
+import Footer from "../components/Footer.astro";
 
 ---
 <!doctype html>
@@ -11,16 +15,19 @@ import Experience from "../components/Experience.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image" href="/IP.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Full Stack Portfolio</title>
 	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+	<body class="min-h-screen relative">
+		<div class="absolute inset-0 -z-10 h-full w-full items-center bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 		<slot />
 		<Header/>
 		<Resumen/>
 		<Experience/>
+		<Technologies/>
+		<Proyects/>
+		<Footer/>
 	</body>
 	
 </html>
@@ -46,4 +53,77 @@ import Experience from "../components/Experience.astro";
 				scroll-behavior: auto;
 			}
 		}
+
+	@keyframes show{
+		from{
+			opacity: 0;
+			scale: 25%;
+		}
+		to{
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+	img{
+			view-timeline-name: --image;
+			view-timeline-axis: block;
+			animation-timeline: --image; 
+			animation-name: show;
+			animation-range: entry 25% cover 50%;
+			animation-fill-mode: both;
+		}
+
+
+/* Limita el ancho para que no se desborde */
+main, section, header, footer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Texto y espaciado general */
+h1, h2, h3, p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive general para móviles */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  header, section, footer {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+
 </style>
