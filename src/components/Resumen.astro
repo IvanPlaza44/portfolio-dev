@@ -6,16 +6,15 @@ import Github from "./icons/Github.astro"
 import Mail from "./icons/Mail.astro"
 ---
 
-<main id="Resumen" class="flex justify-between">
+    <main id="Resumen" class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 px-4 py-10 max-w-6xl mx-auto">
 
         <div class="w-full mx-auto lg:w-[740px] py-10">
-            <h1 class="text-5xl font-bold">Hey Coders, soy Ivan Plaza 
-                <div class="mb-5">
-                    <Badge>Disponible para trabajar</Badge>
-                </div> 
-            </h1>
+            <h1 class="text-5xl font-bold">Hey &lt;Coders/&gt;, soy <span class="text-blue-500/90">Ivan Plaza </span></h1>
+            <div class="mb-5 mt-2">
+                <Badge>Disponible para trabajar</Badge>
+            </div> 
 
-            <h2 class="text-2xl text-wrap">
+            <h2 class="text-lg sm:text-xl leading-relaxed text-center">
                 <span class="text-yellow-500/90">
                     Desarrollador Full Stack especializado en Front-end y Back-end,
                 </span>
@@ -23,14 +22,13 @@ import Mail from "./icons/Mail.astro"
                     con habilidades creativas y trabajo en equipo destacados. Amplia experiencia en tecnologías y frameworks, dispuesto a aprender y enfrentar nuevos desafíos.
                 </span>
 
-                 
             </h2>
         </div>
 
         
     </main>
 
-    <nav class="mb-10 flex gap-5">
+    <nav class="mb-10 flex flex-wrap justify-center gap-4 px-4">
         <SocialPill href="https://www.linkedin.com/in/ivan-andres-plaza/">  
             <LinkedinIcon class="size-6"/>
             Linkedin  
@@ -45,14 +43,9 @@ import Mail from "./icons/Mail.astro"
         </SocialPill>
     </nav>
 
-
-
-
-
-
-    <div class="relative">
-        <img id="img1" src="/avatar.png" alt="avatar" class="w-[400px]">
-        <img id="img2" src="/avatar.png" alt="avatar" class="w-[400px]">
+    <div id="avatar" class="relative flex justify-center">
+        <img id="img1" src="/avatar.png" alt="avatar" class="w-full max-w-[400px]">
+        <img id="img2" src="/avatar.png" alt="avatar" class="w-full max-w-[400px]">
     </div>
 
     <style>
@@ -79,6 +72,25 @@ import Mail from "./icons/Mail.astro"
                 transform: translateY(-20px);
             }
         }
+
+        @keyframes show{
+		from{
+			opacity: 0;
+			scale: 30%;
+		}
+		to{
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+	#avatar{
+			view-timeline-name: --image;
+			view-timeline-axis: block;
+			animation-timeline: --image; 
+			animation-name: show;
+			animation-range: entry 25% cover 50%;
+			animation-fill-mode: both;
+		}
 
         
         
