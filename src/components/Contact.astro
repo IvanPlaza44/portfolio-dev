@@ -1,12 +1,12 @@
 ---
 import { Github, Linkedin, Mail } from '@lucide/astro';
-const { title, description, email, github, linkedin, placeholder, btnText } = Astro.props;
+const { title, subtitle,description, email, github, linkedin, placeholder, btnText } = Astro.props;
 ---
 
-<section id="contact" class="py-24 px-4 fade-cascade">
+<section id={title} class="py-24 px-4 fade-cascade">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl md:text-5xl font-bold mb-12">
-      {title}
+      {subtitle}
     </h2>
 
     <div class="grid md:grid-cols-2 gap-12">

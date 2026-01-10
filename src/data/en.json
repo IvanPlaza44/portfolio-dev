@@ -106,7 +106,8 @@
   },
 
   "contact": {
-    "title": "Get In Touch",
+    "title": "Contact",
+    "subtitle": "Get In Touch",
     "description": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
     "email": "plazaivanalt@gmail.com",
     "github": "https://github.com/IvanPlaza44",
