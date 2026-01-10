@@ -1,0 +1,27 @@
+---
+const { items, title } = Astro.props;
+---
+
+<div id={title} class="max-w-4xl mx-auto px-4 fade-cascade">
+  <h1 class="text-4xl font-bold py-10 flex justify-center">{title}</h1>
+
+  <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+      items.map((item) => (
+        <li class="mb-10 ms-4">
+            <img id="huntek" src={item.image} alt="H" class="w-12 h-12 active"/>
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none">{item.date}</time>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{item.company} - {item.position}</h3>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{item.location}</time>
+            <p class="mb-4 text-base font-normal text-gray-400 dark:text-gray-400 text-pretty"> {item.description}</p>
+            {item.tech.map((t) => (
+              <span
+                class="text-sm py-1.5 px-3 rounded-full bg-muted text-muted-foreground hover:bg-white/30 transition-colors duration-200 ease-in-out">
+                {t}
+              </span>))}
+        </li>
+      ))
+    }
+  </ol>
+</div>

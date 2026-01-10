@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Resume from '../../components/Resume.astro';
+import Experience from '../../components/Experience.astro';
+import Technologies from '../../components/Technologies.astro';
+import Projects from '../../components/Projects.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+
+import en from '../../data/en.json';
+import es from '../../data/es.json';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' }, props: { content: en } },
+    { params: { lang: 'es' }, props: { content: es } },
+  ];
+}
+
+const { lang } = Astro.params;
+const { content } = Astro.props;
+---
+
+<Layout lang={lang} {...content.seo}>
+    <Header {...content.header} />
+    <Resume {...content.resume} />
+    <Experience {...content.experience} />
+    <Technologies {...content.technologies} />
+    <Projects {...content.projects} />
+    <Contact {...content.contact} />
+    <Footer/>
+</Layout>

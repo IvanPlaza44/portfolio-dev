@@ -1,0 +1,117 @@
+---
+import { Github, Linkedin, Mail } from '@lucide/astro';
+const { title, description, email, github, linkedin, placeholder, btnText } = Astro.props;
+---
+
+<section id="contact" class="py-24 px-4 fade-cascade">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold mb-12">
+      {title}
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          {description}
+        </p>
+
+        <div class="space-y-4">
+          <a href={`mailto:${email}`} class="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
+            <div class="p-2 rounded-lg bg-muted group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <Mail class="h-5 w-5" />
+            </div>
+            <span>{email}</span>
+          </a>
+
+          <a href={github} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
+            <div class="p-2 rounded-lg bg-muted group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <Github class="h-5 w-5" />
+            </div>
+            <span>Github</span>
+          </a>
+
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
+            <div class="p-2 rounded-lg bg-muted group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <Linkedin class="h-5 w-5" />
+            </div>
+            <span>Linkedin</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="space-y-4" id="contact-form">
+        <input
+          type="text"
+          name="name"
+          placeholder={placeholder[0]}
+          required
+          class="w-full rounded-lg border bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder={placeholder[1]}
+          required
+          class="w-full rounded-lg border bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+        />
+
+        <textarea
+          name="message"
+          rows="5"
+          placeholder={placeholder[2]}
+          required
+          class="w-full rounded-lg border bg-background px-4 py-3 outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+        ></textarea>
+
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground 
+                transition-colors duration-300 hover:bg-primary/90 
+                active:scale-95 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+        >
+          <span id="btn-text">{btnText}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnTextElem = document.getElementById('btn-text');
+  const originalText = btnTextElem?.innerText || "Send Message";
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (btn) btn.disabled = true;
+    if (btnTextElem) btnTextElem.innerText = "Sending...";
+
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        form.reset();
+      } else {
+        alert("Error: " + (result.message || "Could not send message"));
+      }
+    } catch (error) {
+      alert("Connection error");
+    } finally {
+      if (btn) btn.disabled = false;
+      if (btnTextElem) btnTextElem.innerText = originalText;
+    }
+  });
+</script>
+

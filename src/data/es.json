@@ -1,0 +1,121 @@
+{
+    "seo": {
+      "title": "Portafolio de Desarrollo Web de Iván Plaza",
+      "description": "Bienvenido a mi portafolio de desarrollo web. Explora mis proyectos, experiencia y habilidades tecnológicas."
+    },
+
+  "header": {
+    "nav": [
+      { "name": "Experiencia", "href": "#Experiencia" },
+      { "name": "Proyectos", "href": "#Proyectos" },
+      { "name": "Tecnologías", "href": "#Tecnologías" },
+      { "name": "Contacto", "href": "#Contacto" }
+    ]
+  },
+  "resume": {
+    "greeting": "Hey <Coders/>, soy ",
+    "name": "Iván Plaza",
+    "role": "Desarrollador Full Stack especializado en Front-end y Back-end,",
+    "badge": "Disponible para trabajar",
+    "description": "apasionado por crear soluciones digitales innovadoras y construir aplicaciones web escalables y de alto rendimiento.",
+    "buttons": {
+      "linkedin": "https://www.linkedin.com/in/ivan-andres-plaza/",
+      "github": "https://github.com/IvanPlaza44",
+      "email": "plazaivanalt@gmail.com",
+      "downloadCV": "Descargar CV"
+
+    }
+  },
+
+  "experience": {
+    "title": "Experiencia",
+    "items": [
+      {
+        "date": "Julio. 2022",
+        "company": "Huntek",
+        "position": "Desarrollador Web Full Stack",
+        "location": "Ciudad de Mexico, Mexico",
+        "description": "Diseñar y desarrollar una aplicación que tenga como principal objetivo agilizar y mejorar la conexión entre postulantes profesionales que deseen encontrar un empleo y empresas que se encuentran con vacantes disponibles.",
+        "tech": ["NodeJS", "Python", "FastAPI", "SQLAlchemy", "Alembic", "Docker", "AWS"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoHuntek.png"
+      }
+    , {
+        "date": "Mayo. 2023",
+        "company": "Soy Henry",
+        "position": "Desarrollador Full Stack (Académico)",
+        "location": "Buenos Aires, Argentina",
+        "description": "Diseñar y Desarrollar una SPA (Single Page Application) a través de una API, con las funcionalidades de búsquedas, ordenamientos, filtros y formulario controlado para la creación de recetas de comida.",
+        "tech": ["React", "Redux", "CSS Modules", "Node.js", "Express", "PostgreSQL", "Sequelize"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoHenry.png"
+      },
+      {
+        "date": "Septiembre. 2022",
+        "company": "CoderHouse",
+        "position": "Desarrollador Python (Académico)",
+        "location": "Buenos Aires, Argentina",
+        "description": "Desarrollar una App que funcione como un pequeño Blog el cual tendrá las funcionalidades de registro y Loguin de usuario para poder acceder y hacer uso de este. Que tenga la posibilidad de crear y editar un perfil de usuario, además podrá hacer uso de un formulario controlado para realizar posteos sobre Video Juegos, asimismo visualizar posteos de otros usuarios y poder realizar búsqueda y ordenamientos.",
+        "tech": ["Python", "GitHub", "SQLite", "Django"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoCoderhouse.png"
+      },
+      {
+        "date": "Abril. 2022",
+        "company": "CoderHouse",
+        "position": "Software Tester QA (Académico)",
+        "location": "Buenos Aires, Argentina",
+        "description": "Implementar pruebas manuales de software sobre una pagina web que se encuentra en producción, elaborando casos de pruebas planificados en tres secciones distintas del sitio web, implementando búsqueda de Bugs sobre el funcionamiento de este, luego creando un formulario ordenado de reportes de errores con todo lo necesario y detallado para comunicarlo al equipo de desarrollo, como lo son resultados esperados, prioridad del Bug, objetivos, evidencias, entre otros y de esta manera poder mejorar la experiencia del Usuario.",
+        "tech": ["Metodologías Ágiles", "GitHub", "Postman", "Selenium", "Jira"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoCoderhouse.png"
+      }
+    ]
+  },
+
+  "technologies": {
+    "title": "Tecnologías",
+    "description": "En mi viaje por el mundo del desarrollo web, he cultivado experiencia y habilidades en una variedad de tecnologías.",
+    "highlight": "Mi stack tecnológico incluye:"
+  },
+
+    "projects": {
+    "title": "Proyectos",
+    "items": [
+      {
+        "title": "Huntek",
+        "description": "Huntek es una plataforma que busca emparejar a candidatos con oportunidades laborales ideales, tanto para empresas como para personas. Ofrece seguimiento y respuesta en todos los 'match' realizados.",
+        "image": "/huntek.png",
+        "tech": ["NodeJS", "Python", "FastAPI", "SQLAlchemy", "Alembic", "Docker"],
+        "github": "https://github.com",
+        "url": "https://www.linkedin.com/company/huntek/"
+      },     
+      {
+        "title": "Tres en Raya",
+        "description": "Tres en Raya es una versión digital del clásico juego de estrategia para dos jugadores. Fue desarrollado con tecnologías web modernas para brindar una experiencia simple y atractiva",
+        "image": "/tres.png",
+        "tech": ["React", "Node.js", "JavaScript", "HTML5", "CSS3"],
+        "github": "https://github.com/IvanPlaza44/TresEnRaya",
+        "url": "https://tres-en-raya-git-main-ivanplaza44.vercel.app/"
+      },
+      {
+        "title": "Personal Portfolio",
+        "description": "Portfolio personal desarrollado para mostrar mis proyectos, habilidades y experiencia como desarrollador web. Construido con Astro y Tailwind CSS para una experiencia rápida y receptiva.",
+        "image": "/portfolio.png",
+        "tech": ["Astro", "Tailwind CSS", "JavaScript"],
+        "github": "https://github.com/IvanPlaza44/templatePortfolioDeveloper",
+        "url": "https://template-portfolio-developer.vercel.app/es/"
+      }
+    ]
+  },
+
+   "contact": {
+    "title": "Contacto",
+    "description": "¿Querés trabajar conmigo o tenés alguna consulta?",
+    "email": "plazaivanalt@gmail.com",
+    "github": "https://github.com/IvanPlaza44",
+    "linkedin": "https://www.linkedin.com/in/ivan-andres-plaza/",
+    "placeholder": ["Tu nombre", "Tu email", "Tu mensaje"],
+    "btnText": "Enviar mensaje"
+  }
+}

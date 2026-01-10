@@ -1,0 +1,103 @@
+---
+import Badge from "./Badge.astro"
+import LinkedinIcon from "../components/icons/Linkedin.astro"
+import SocialPill from "../components/SocialPill.astro"
+import Github from "./icons/Github.astro"
+import Mail from "./icons/Mail.astro"
+import CV from "./icons/CV.astro"
+const { greeting, name, role, description, buttons, badge } = Astro.props;
+---
+
+    <main id="Resume" class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 px-4 py-10 max-w-6xl mx-auto fade-cascade">
+
+        <div class="w-full mx-auto lg:w-[740px] py-10">
+            <h1 class="text-5xl font-bold">{greeting}<span class="text-blue-500/90">{name}</span></h1>
+            <div class="mb-5 mt-2">
+                <Badge>{badge}</Badge>
+            </div> 
+
+            <h2 class="text-lg sm:text-xl leading-relaxed text-center">
+                <span class="text-yellow-500/90">
+                    {role}
+                </span>
+                <span>
+                    {description}
+                </span>
+
+            </h2>
+        </div>
+
+        
+    </main>
+
+    <nav class="mb-10 flex flex-wrap justify-center gap-4 px-4">
+        <SocialPill href={buttons.linkedin}>  
+            <LinkedinIcon class="size-6"/>
+            Linkedin  
+        </SocialPill>
+        <SocialPill href={buttons.github}>  
+            <Github class="size-6"/>
+            GitHub  
+        </SocialPill>
+        <SocialPill href={`mailto:${buttons.email}`}>  
+            <Mail class="size-6"/>
+            {buttons.email}
+        </SocialPill>
+        <SocialPill href="/CV Ivan Plaza Full Stack.pdf" download="CV Ivan Plaza Full Stack Developer">  
+            <CV class="size-7"/>
+            {buttons.downloadCV}
+        </SocialPill>
+    </nav>
+
+    <div id="avatar" class="relative mx-auto w-full max-w-[400px]">
+        <img id="img1" src="/avatar.png" alt="avatar" class="w-full max-w-[400px]">
+        <img id="img2" src="/avatar.png" alt="avatar" class="w-full max-w-[400px]">
+    </div>
+
+    <style>
+        #img1 {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        #img2 {
+            animation: floating 3s ease-in-out infinite;
+            position: absolute;
+            inset: 0;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        @keyframes floating{
+            0% {
+                transform: translateY(-20px);
+            }
+            50% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes show{
+		from{
+			opacity: 0;
+			scale: 30%;
+		}
+		to{
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+	#avatar{
+			view-timeline-name: --image;
+			view-timeline-axis: block;
+			animation-timeline: --image; 
+			animation-name: show;
+			animation-range: entry 25% cover 50%;
+			animation-fill-mode: both;
+		}
+
+        
+        
+    </style>

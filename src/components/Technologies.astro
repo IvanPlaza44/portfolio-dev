@@ -1,0 +1,21 @@
+---
+import IconsTechnologies from "./icons/IconsTechnologies.astro";
+const { title, description, highlight } = Astro.props;
+
+---
+<div id={title} class="fade-cascade text-center mx-auto max-w-xl mb-8 text-2xl">
+    <h1 class="text-3xl sm:text-4xl font-bold py-8 sm:py-10 flex justify-center">{title}</h1>
+    <p >
+        {description}
+        <span class="text-yellow-500/90">{highlight}</span>
+    </p>
+
+</div>
+
+    <IconsTechnologies/>
+
+
+
+
+
+    

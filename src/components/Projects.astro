@@ -1,0 +1,68 @@
+---
+import { Github, SquareArrowOutUpRight } from '@lucide/astro';
+
+const { title, items } = Astro.props;
+---
+<div class="text-center mx-auto max-w-l mb-8 fade-cascade">
+<h1 class="text-3xl sm:text-4xl font-bold text-center mb-10 fade-cascade">{title}</h1> 
+
+<section id={title} class="py-24 px-4 bg-muted/20 fade-cascade">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {items.map((project) => (
+        <article class="group relative rounded-xl border border-border bg-card text-card-foreground shadow-sm hover:border-primary/50 hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
+          
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+              {project.title}
+            </h3>
+
+            <p class="text-muted-foreground mb-6 leading-relaxed flex-grow">
+              {project.description}
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.tech.map((tech) => (
+                <span class="text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-full bg-secondary text-secondary-foreground border border-border/50">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div class="flex gap-3">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
+              >
+                <Github class="h-4 w-4" />
+                <span>Code</span>
+              </a>
+
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-all duration-200 active:scale-[0.98]"
+              >
+                <SquareArrowOutUpRight class="h-4 w-4" />
+                <span>Live</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+

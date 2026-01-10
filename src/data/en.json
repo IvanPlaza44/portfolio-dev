@@ -1,0 +1,117 @@
+{
+  "seo": {
+    "title": "Iván Plaza | Web Development Portfolio",
+    "description": "Welcome to my web development portfolio. Explore my projects, experience, and technological skills."
+  },
+  "header": {
+    "nav": [
+      { "name": "Experience", "href": "#Experience" },
+      { "name": "Projects", "href": "#Projects" },
+      { "name": "Technologies", "href": "#Technologies" },
+      { "name": "Contact", "href": "#Contact" }
+    ]
+  },
+  "resume": {
+    "greeting": "Hey <Coders/>, I'm ",
+    "name": "Iván Plaza",
+    "role": "Full Stack Developer specialized in Front-end and Back-end,",
+    "badge": "Available to work",
+    "description": "passionate about creating innovative digital solutions and building scalable, high-performance web applications.",
+    "buttons": {
+      "linkedin": "https://www.linkedin.com/in/ivan-andres-plaza/",
+      "github": "https://github.com/IvanPlaza44",
+      "email": "plazaivanalt@gmail.com",
+      "downloadCV": "Download CV"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "date": "July 2022",
+        "company": "Huntek",
+        "position": "Full Stack Web Developer",
+        "location": "Mexico City, Mexico",
+        "description": "Designed and developed an application whose main objective is to streamline and improve the connection between professional applicants seeking employment and companies with available vacancies.",
+        "tech": ["NodeJS", "Python", "FastAPI", "SQLAlchemy", "Alembic", "Docker", "AWS"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoHuntek.png"
+      },
+      {
+        "date": "May 2023",
+        "company": "Soy Henry",
+        "position": "Full Stack Developer (Academic)",
+        "location": "Buenos Aires, Argentina",
+        "description": "Designed and Developed a SPA (Single Page Application) using an API, featuring search, sorting, and filtering functionalities, along with a controlled form for creating food recipes.",
+        "tech": ["React", "Redux", "CSS Modules", "Node.js", "Express", "PostgreSQL", "Sequelize"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoHenry.png"
+      },
+      {
+        "date": "September 2022",
+        "company": "CoderHouse",
+        "position": "Python Developer (Academic)",
+        "location": "Buenos Aires, Argentina",
+        "description": "Developed an App that functions as a small Blog with user registration and login functionalities. It allows users to create and edit profiles, and use a controlled form to post about Video Games, view other users' posts, and perform searches and sorting.",
+        "tech": ["Python", "GitHub", "SQLite", "Django"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoCoderhouse.png"
+      },
+      {
+        "date": "April 2022",
+        "company": "CoderHouse",
+        "position": "Software Tester QA (Academic)",
+        "location": "Buenos Aires, Argentina",
+        "description": "Implemented manual software testing on a live production website, developing planned test cases across three different sections of the site. Focused on bug hunting, creating detailed error reports including expected results, bug priority, objectives, and evidence to improve User Experience.",
+        "tech": ["Agile Methodologies", "GitHub", "Postman", "Selenium", "Jira"],
+        "link": "https://www.linkedin.com/company/huntek/",
+        "image": "/logoCoderhouse.png"
+      }
+    ]
+  },
+  "technologies": {
+    "title": "Technologies",
+    "description": "In my journey through the web development world, I have cultivated experience and skills in a variety of technologies.",
+    "highlight": "My tech stack includes:"
+  },
+
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "title": "Huntek",
+        "description": "Huntek is a platform that seeks to match candidates with ideal job opportunities, both for companies and individuals. It offers tracking and feedback for all matches made.",
+        "image": "/huntek.png",
+        "tech": ["NodeJS", "Python", "FastAPI", "SQLAlchemy", "Alembic", "Docker"],
+        "github": "https://github.com",
+        "url": "https://www.linkedin.com/company/huntek/"
+      },     
+      {
+        "title": "Tic-Tac-Toe",
+        "description": "Tic-Tac-Toe is a digital version of the classic strategy game for two players. It was developed with modern web technologies to provide a simple and attractive experience.",
+        "image": "/tres.png",
+        "tech": ["React", "Node.js", "JavaScript", "HTML5", "CSS3"],
+        "github": "https://github.com/IvanPlaza44/TresEnRaya",
+        "url": "https://tres-en-raya-git-main-ivanplaza44.vercel.app/"
+      },
+      {
+        "title": "Personal Portfolio",
+        "description": "Personal portfolio website built with Astro and Tailwind CSS to showcase my projects, experience, and skills as a web developer.",
+        "image": "/portfolio.png",
+        "tech": ["Astro", "Tailwind CSS", "JavaScript"],
+        "github": "https://github.com/IvanPlaza44/templatePortfolioDeveloper",
+        "url": "https://template-portfolio-developer.vercel.app/es/"
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
+    "email": "plazaivanalt@gmail.com",
+    "github": "https://github.com/IvanPlaza44",
+    "linkedin": "https://www.linkedin.com/in/ivan-andres-plaza/",
+    "placeholder": ["Your name", "Your email", "Your message"],
+    "btnText": "Send message"
+  }
+}

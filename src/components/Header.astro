@@ -1,0 +1,15 @@
+---
+import Logo from './icons/Logo.astro';
+const { header, nav} = Astro.props;
+---
+
+<header class="w-full max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between border-b-2 border-white gap-4 fade-cascade">
+  <Logo />
+
+  <nav class="flex flex-wrap justify-center sm:justify-end gap-6">
+    {nav.map((item) => (
+      <a href={item.href} class="text-white text-lg font-medium hover:text-blue-500 transition-all duration-200">{item.name}</a>
+      ))}
+  </nav>
+</header>
+

@@ -1,22 +1,27 @@
-<!doctype html>
-<html lang="en">
+---
+import "../styles/global.css";
+import '@fontsource-variable/onest';
+import LanguageSwitcher from "../components/UI/LanguageSwitcher.astro";
+const { title, lang = "en" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang} class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image" href="/IP.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen relative">
+		<header class="p-1 flex justify-end">
+      		<LanguageSwitcher lang={lang} />
+    	</header>
+		<div class="absolute inset-0 -z-10 h-full w-full items-center bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 	</body>
-</html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<main class="min-h-screen">
+		<slot />
+	</main>
+	
+</html>
