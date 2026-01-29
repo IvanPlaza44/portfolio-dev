@@ -5,7 +5,7 @@ import SocialPill from "../components/SocialPill.astro"
 import Github from "./icons/Github.astro"
 import Mail from "./icons/Mail.astro"
 import CV from "./icons/CV.astro"
-const { greeting, name, role, description, buttons, badge } = Astro.props;
+const { greeting, name, role, description, buttons, badge, PDF } = Astro.props;
 ---
 
     <main id="Resume" class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 px-4 py-10 max-w-6xl mx-auto fade-cascade">
@@ -43,7 +43,7 @@ const { greeting, name, role, description, buttons, badge } = Astro.props;
             <Mail class="size-6"/>
             {buttons.email}
         </SocialPill>
-        <SocialPill href="/CV Ivan Plaza Full Stack.pdf" download="CV Ivan Plaza Full Stack Developer">  
+        <SocialPill href={PDF} download="CV Ivan Plaza Full Stack Developer">  
             <CV class="size-7"/>
             {buttons.downloadCV}
         </SocialPill>
